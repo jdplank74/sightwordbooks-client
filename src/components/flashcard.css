@@ -1,0 +1,14 @@
+.fcControls {
+  text-align: center;
+}
+.flashcard {
+  display: inline-block;
+  width: 34%;
+  text-align: center;
+  background-color: darkgrey;
+}
+
+.flashcardSpacer {
+  display: inline-block;
+  width: 33%;
+}

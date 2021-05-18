@@ -1,0 +1,12 @@
+.imageToEdit {
+  height: 500px;
+  width: 500px;
+}
+
+.filePickerHidden {
+  display: none;
+}
+
+.filePickerVisible {
+  display: none;
+}

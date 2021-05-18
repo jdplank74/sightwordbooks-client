@@ -1,0 +1,21 @@
+.activeTabDiv {
+  display: block;
+}
+
+.inactiveTabDiv {
+  display: none;
+}
+
+.activeTab {
+  background: lightblue;
+  outline: 0 none;
+}
+
+.inactiveTab {
+  background: white;
+  outline-width: 0;
+}
+
+.tab {
+  margin: 1px;
+}

@@ -1,0 +1,64 @@
+.bookTileCoverImage {
+  height: 196px;
+  width: 196px;
+}
+
+.bookCoverImage {
+  height: 500px;
+  width: 500px;
+}
+
+.pageImage {
+  height: 500px;
+  width: 500px;
+}
+
+.pageDiv {
+  text-align: center;
+}
+
+.library {
+  display:inline-block;
+}
+
+.bookTile {
+  width: 200px;
+  display: inline-block;
+  border-width: 0px;
+  border-style: solid;
+  border-color: lightgrey;
+  padding: 2px;
+  margin: 2px;
+  font-size: small;
+}
+
+.loading {
+  text-align: center;
+}
+
+.bookTileTitle {
+  font-size: small;
+}
+
+.bookTitle {
+  text-align: center;
+  font-size: large;
+  color: grey;
+}
+
+.bookContent {
+  text-align: center;
+}
+
+.bookControls {
+  text-align: center;
+}
+
+.author {
+  color:grey;
+  font-size: smaller;
+}
+
+.bookTileTop {
+  display: block;
+}

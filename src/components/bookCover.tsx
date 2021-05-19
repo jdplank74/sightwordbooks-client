@@ -17,4 +17,5 @@ const BookCover: FC<BookCoverProps> = ({book}) => {
   );
 };
 
+
 export default BookCover;

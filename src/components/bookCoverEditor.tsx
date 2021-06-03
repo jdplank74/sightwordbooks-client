@@ -4,20 +4,26 @@ import {Image} from '../types/Image';
 import { BookEditorState } from '../types/BookEditorState';
 import ImageEditor from './imageEditor';
 type BookCoverEditorProps = {
-  //book: Book;
-  //setBook: (book: Book) => void;
   bookEditorState: BookEditorState;
 }
 
 const BookCoverEditor : FC<BookCoverEditorProps> = ({bookEditorState}) => {
   const [coverImagePath, setCoverImagePath] = useState<string>();
-  //const [imageData, setImageData] = useState<string>();
   const [imageChanged, setImageChanged] = useState<boolean>(true);
 
   const img: Image = bookEditorState.bookToEdit.coverImage ? bookEditorState.bookToEdit.coverImage : {}
   
   const [image, setImage] = useState<Image>(img);
 
+  const authorChanged = (e: any) => {
+    bookEditorState.bookToEdit.author = e.target.value;
+    bookEditorState.setBookToEdit(bookEditorState.bookToEdit);
+  }
+  const titleChanged = (e: any) => {
+    bookEditorState.bookToEdit.title = e.target.value;
+    bookEditorState.setBookToEdit(bookEditorState.bookToEdit);
+  }
+  
   const setSelectedImage = (name: string, imageData: string) =>
   {
     const image: Image = {
@@ -41,10 +47,10 @@ const BookCoverEditor : FC<BookCoverEditorProps> = ({bookEditorState}) => {
   return (
     <div>
       <div>
-        <input placeholder="Enter title" />
+        <input onChange={titleChanged} placeholder="Enter title" />
       </div>  
       <div>
-        <input placeholder="Enter author" />
+        <input onChange={authorChanged} placeholder="Enter author" />
       </div>
       <div>
         <ImageEditor image={image} setImage={setSelectedImage}  />  

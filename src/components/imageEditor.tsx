@@ -12,7 +12,7 @@ type ImageEditorProps = {
 const ImageEditor: FC<ImageEditorProps> = ({image, setImage}) => {
   const getImageSource = (image: Image) : string => {
     if(image.imageBase64)
-      return image.imageBase64;
+      return `data:image/${image.format};base64,${image.imageBase64}`;
     if(image.url)
       return image.url;
     else
@@ -30,8 +30,11 @@ const ImageEditor: FC<ImageEditorProps> = ({image, setImage}) => {
     var reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
+      // remove this data:image/jpeg;base64,
       if(dataURL) {
-        setImage(input.files[0].name, dataURL.toString())
+        let regex = new RegExp('^data:image\/\\w+;base64,', 'i');
+        var imageBase64 = dataURL.toString().replace(regex,"");
+        setImage(input.files[0].name, imageBase64);
       }
     };
 

@@ -13,6 +13,7 @@ export type BookEditorState = {
   saveBook: (book: Book) => Book;
   enterEditMode: () => void;
   getCurrentPage: () => Page;
+  setBookToEdit: (book: Book) => void;
 }
 
 export const useBookEditorState = (book: Book | null) : BookEditorState => {
@@ -78,6 +79,6 @@ export const useBookEditorState = (book: Book | null) : BookEditorState => {
     return bookToEdit.pages[pageNumber-1];
   }
 
-  const bookEditorState : BookEditorState = {isEditing, pageNumber, bookToEdit, step, saveBook, enterEditMode, addPageToBook, addPage, enterPageMode, getCurrentPage}
+  const bookEditorState : BookEditorState = {isEditing, pageNumber, bookToEdit, step, saveBook, enterEditMode, addPageToBook, addPage, enterPageMode, getCurrentPage, setBookToEdit}
   return bookEditorState;
 }

@@ -13,7 +13,7 @@ export const SIGHTWORDS = gql`
     } 
   }
 }
-`
+`;
 
 export const BOOKS = gql`
 {
@@ -23,6 +23,7 @@ export const BOOKS = gql`
     author
     coverImage {
       url
+      format
     }
     pages {
       id
@@ -40,9 +41,10 @@ query pageById($id: ID) {
     prose
     image {
       url
+      format
     }
   }
-}`
+}`;
 
 export const SIGHTWORDGROUPS = gql`
 query sightwordGroups {
@@ -54,4 +56,27 @@ query sightwordGroups {
       word
     }
   }
-}`
+}`;
+
+// addPage(page: PageInput) : Page
+// setPageImage(pageImage: PageImageInput) : Page
+
+export const CREATEBOOK = gql`
+mutation createBook($book: BookInput) {
+  createBook(book: $book) {
+    id
+  }
+}
+`;
+
+export const SETBOOKCOVERIMAGE = gql`
+mutation setCoverImage($coverImage: CoverImageInput) {
+  setCoverImage(coverImage: $coverImage)
+  {
+    coverImage {
+      url
+      format
+    }
+  }
+}
+`;
